@@ -1,0 +1,27 @@
+{
+  "status": null,
+  "totalResults": null,
+  "articles": [
+    {
+      "source": {
+      },
+      "title": "NASA helicopter took a piece of the Wright brothers' plane to Mars - CNET",
+      "description": "NASA is gearing up for a dramatic Mars test flight of Ingenuity as soon as April 8.",
+      "url": "https://www.cnet.com/news/nasa-helicopter-took-a-piece-of-the-wright-brothers-famous-plane-to-mars/",
+      "publishedAt": "2021-03-24T21:43:00Z"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": null
+      },
+      "author": null,
+      "title": "People line the streets of Boulder to honor slain police Officer Eric Talley - CNN",
+      "description": "Boulder, Colorado, continued to mourn fallen Officer Eric Talley on Wednesday.",
+      "url": "https://www.cnn.com/2021/03/24/us/officer-talley-procession/index.html",
+      "urlToImage": null,
+      "publishedAt": "2021-03-24T22:20:12Z",
+      "content": null
+    }
+  ]
+}
