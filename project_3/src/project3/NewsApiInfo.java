@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
-class NewsApiInfo {
+class NewsApiInfo extends SourceFormat{
     private final String status;
     private final Integer totalResults;
     private final List<NewsApi_Article> articles;
@@ -16,6 +16,9 @@ class NewsApiInfo {
         this.status = status;
         this.totalResults = totalResults;
         this.articles = articles;
+    }
+    void accept(Parser parser) {
+        return parser.visit(this);
     }
 
     String getStatus() {

@@ -8,6 +8,11 @@ import java.util.logging.Logger;
 
 public class Simple_Parser extends Parser{
 
+    @Override
+    void visit(Simple_Parser simple) {
+       simple.fileParser("");
+    }
+
     /**
      * Parses through a Json file from the Simple format and prints details to the client.
      * It uses two private methods, one that logs invaild articles and

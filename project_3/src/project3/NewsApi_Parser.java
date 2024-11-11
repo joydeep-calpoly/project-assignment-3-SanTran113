@@ -7,6 +7,12 @@ import java.io.IOException;
 import java.util.logging.Logger;
 
 class NewsApi_Parser extends Parser{
+
+    @Override
+    void visit(NewsApi_Parser newsApi){
+        newsApi.fileParser("");
+    }
+
     /**
      * Parses through a Json file from the News API and prints details to the client.
      * It uses two private methods, one that logs invaild articles and

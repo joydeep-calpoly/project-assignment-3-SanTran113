@@ -5,7 +5,13 @@ import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-public abstract class Parser{
+abstract class Parser{
+    public void visit(NewsApiInfo newsApi) {
+    }
+
+    public void visit(Simple simple) {
+    }
+
     /**
      * Creates a Logger object that will log any invaild articles.
      * It creates a .out file for invaild articles from any format called invaildArticles.out.
@@ -28,5 +34,4 @@ public abstract class Parser{
 
         return logger;
     }
-
 }
