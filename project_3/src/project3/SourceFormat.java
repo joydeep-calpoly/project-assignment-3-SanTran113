@@ -1,10 +1,20 @@
 package project3;
 
 abstract class SourceFormat {
-    Enum source;
-    Enum format;
-
-    void accept(Parser p){
+    ArticleSource source;
+    ArticleFormat format;
+    SourceFormat (ArticleSource source, ArticleFormat format) {
+        this.source = source;
+        this.format = format;
     }
 
+    abstract void accept(Parser p);
+
+    ArticleSource getSource() {
+        return source;
+    }
+
+    ArticleFormat getFormat() {
+        return format;
+    }
 }

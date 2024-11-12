@@ -18,7 +18,7 @@ class NewsApiInfo extends SourceFormat{
         this.articles = articles;
     }
     void accept(Parser parser) {
-        return parser.visit(this);
+        parser.visit(this);
     }
 
     String getStatus() {

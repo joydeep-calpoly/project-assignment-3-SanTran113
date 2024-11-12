@@ -20,7 +20,7 @@ class Simple extends SourceFormat{
 
     @Override
     void accept(Parser parser) {
-        return parser.visit(this);
+        parser.visit(this);
     }
 
     public String getTitle() {

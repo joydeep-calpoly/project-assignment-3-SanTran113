@@ -9,8 +9,8 @@ import java.util.logging.Logger;
 public class Simple_Parser extends Parser{
 
     @Override
-    void visit(Simple_Parser simple) {
-       simple.fileParser("");
+    void visit(Simple simple) {
+       simple = new Simple_Parser().fileParser("");
     }
 
     /**
