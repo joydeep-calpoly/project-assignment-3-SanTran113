@@ -29,9 +29,6 @@ abstract class Parser{
         return logger;
     }
 
-    abstract void visit(NewsApiInfo newsApi);
-
-    abstract void visit(Simple simple);
-
+    abstract void visit();
 
 }

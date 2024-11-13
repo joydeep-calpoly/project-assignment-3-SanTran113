@@ -9,8 +9,8 @@ import java.util.logging.Logger;
 class NewsApi_Parser extends Parser{
 
     @Override
-    void visit(NewsApiInfo newsApi){
-        newsApi = new NewsApi_Parser().fileParser("");
+    void visit() {
+
     }
 
     /**

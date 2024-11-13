@@ -3,7 +3,7 @@ package project3;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-class Simple extends SourceFormat{
+class Simple{
     private final String description;
     private final String publishedAt;
     private final String url;
@@ -16,11 +16,6 @@ class Simple extends SourceFormat{
         this.publishedAt = publishedAt;
         this.url = url;
         this.title = title;
-    }
-
-    @Override
-    void accept(Parser parser) {
-        parser.visit(this);
     }
 
     public String getTitle() {

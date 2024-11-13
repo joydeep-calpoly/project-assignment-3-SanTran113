@@ -7,10 +7,9 @@ import java.io.IOException;
 import java.util.logging.Logger;
 
 public class Simple_Parser extends Parser{
-
     @Override
-    void visit(Simple simple) {
-       simple = new Simple_Parser().fileParser("");
+    void visit() {
+
     }
 
     /**
@@ -64,6 +63,6 @@ public class Simple_Parser extends Parser{
             System.out.println("Publication: " + simpleJson.getPublishedAt());
         }
 
-    }
+}
 
 
