@@ -9,8 +9,8 @@ import java.util.logging.Logger;
 class NewsApi_Parser extends Parser{
 
     @Override
-    Object visit(String json){
-        return fileParser(json);
+    void visit(String json){
+        fileParser(json);
     }
 
     /**
@@ -22,7 +22,6 @@ class NewsApi_Parser extends Parser{
      * @return an ArticleInfo object which contains the Json object
      *
      */
-    @Override
     NewsApiInfo fileParser(String input) {
         ObjectMapper mapper = new ObjectMapper();
         File file = new File(input);

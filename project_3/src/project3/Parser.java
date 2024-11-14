@@ -8,9 +8,9 @@ import java.util.logging.SimpleFormatter;
 
 abstract class Parser{
 
-    abstract Object visit(String json);
+    abstract void visit(String json);
 
-    abstract Object fileParser(String json);
+//    abstract void fileParser(String json);
 
     /**
      * Creates a Logger object that will log any invaild articles.

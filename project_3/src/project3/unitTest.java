@@ -1,5 +1,6 @@
 package project3;
 
+import org.apiguardian.api.API;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -153,7 +154,9 @@ class unitTest {
         Simple_Parser simple = new Simple_Parser();
         String filePath = "inputs/simple.json";
         SourceFormat article = new SourceFormat(ArticleSource.FILE, ArticleFormat.SIMPLE);
-        assertNotNull(article.accept(simple, filePath));
+        article.accept(simple, filePath);
+        assertEquals(article.source, ArticleSource.FILE);
+        assertEquals(article.format, ArticleFormat.SIMPLE);
     }
 
     @Test
@@ -161,13 +164,18 @@ class unitTest {
         NewsApi_Parser newsApi = new NewsApi_Parser();
         String filePath = "inputs/newsapi.json";
         SourceFormat article = new SourceFormat(ArticleSource.FILE, ArticleFormat.NEWSAPI);
-        assertNotNull(article.accept(newsApi, filePath));
+        article.accept(newsApi, filePath);
+        assertEquals(article.source, ArticleSource.FILE);
+        assertEquals(article.format, ArticleFormat.NEWSAPI);
+
     }
 
     @Test
     void testVisitNewsApiAPI() {
         NewsApi_Parser newsApi = new NewsApi_Parser();
-        SourceFormat article = new SourceFormat(ArticleSource.FILE, ArticleFormat.NEWSAPI);
-        assertNotNull(article.accept(newsApi, "filePath"));
+        SourceFormat article = new SourceFormat(ArticleSource.URL, ArticleFormat.NEWSAPI);
+        article.accept(newsApi, Driver.API_Json());
+        assertEquals(article.source, ArticleSource.URL);
+        assertEquals(article.format, ArticleFormat.NEWSAPI);
     }
 }
