@@ -8,8 +8,8 @@ class SourceFormat {
         this.format = format;
     }
 
-    Parser accept(Parser p, String json) {
-        return (Parser) p.visit(json);
+    Object accept(Parser p, String json) {
+        return p.visit(json);
     }
 
 }

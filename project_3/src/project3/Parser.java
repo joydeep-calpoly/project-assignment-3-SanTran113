@@ -1,13 +1,16 @@
 package project3;
 
 import java.io.IOException;
+import java.util.Objects;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 abstract class Parser{
 
-    abstract void visit(String json);
+    abstract Object visit(String json);
+
+    abstract Object fileParser(String json);
 
     /**
      * Creates a Logger object that will log any invaild articles.

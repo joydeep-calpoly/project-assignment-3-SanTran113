@@ -155,4 +155,19 @@ class unitTest {
         SourceFormat article = new SourceFormat(ArticleSource.FILE, ArticleFormat.SIMPLE);
         assertNotNull(article.accept(simple, filePath));
     }
+
+    @Test
+    void testVisitNewsApiFile() {
+        NewsApi_Parser newsApi = new NewsApi_Parser();
+        String filePath = "inputs/newsapi.json";
+        SourceFormat article = new SourceFormat(ArticleSource.FILE, ArticleFormat.NEWSAPI);
+        assertNotNull(article.accept(newsApi, filePath));
+    }
+
+    @Test
+    void testVisitNewsApiAPI() {
+        NewsApi_Parser newsApi = new NewsApi_Parser();
+        SourceFormat article = new SourceFormat(ArticleSource.FILE, ArticleFormat.NEWSAPI);
+        assertNotNull(article.accept(newsApi, "filePath"));
+    }
 }

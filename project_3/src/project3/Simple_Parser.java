@@ -9,8 +9,8 @@ import java.util.logging.Logger;
 public class Simple_Parser extends Parser{
 
     @Override
-    void visit(String json) {
-        fileParser(json);
+    Simple visit(String json) {
+        return fileParser(json);
     }
 
     /**
@@ -22,6 +22,7 @@ public class Simple_Parser extends Parser{
      * @return a Simple object which contains the Json object
      *
      */
+    @Override
     Simple fileParser(String input) {
 
         ObjectMapper mapper = new ObjectMapper();
