@@ -1,6 +1,6 @@
 package project3;
 
-abstract class SourceFormat {
+class SourceFormat {
     ArticleSource source;
     ArticleFormat format;
     SourceFormat (ArticleSource source, ArticleFormat format) {
@@ -8,13 +8,8 @@ abstract class SourceFormat {
         this.format = format;
     }
 
-    abstract void accept(Parser p);
-
-    ArticleSource getSource() {
-        return source;
+    Parser accept(Parser p, String json) {
+        return (Parser) p.visit(json);
     }
 
-    ArticleFormat getFormat() {
-        return format;
-    }
 }

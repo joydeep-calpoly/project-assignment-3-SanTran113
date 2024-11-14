@@ -6,6 +6,9 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 abstract class Parser{
+
+    abstract void visit(String json);
+
     /**
      * Creates a Logger object that will log any invaild articles.
      * It creates a .out file for invaild articles from any format called invaildArticles.out.
@@ -28,7 +31,4 @@ abstract class Parser{
 
         return logger;
     }
-
-    abstract void visit();
-
 }

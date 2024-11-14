@@ -148,6 +148,11 @@ class unitTest {
         assertNull(s.getUrl());
     }
 
-
-
+    @Test
+    void testVisitSimple() {
+        Simple_Parser simple = new Simple_Parser();
+        String filePath = "inputs/simple.json";
+        SourceFormat article = new SourceFormat(ArticleSource.FILE, ArticleFormat.SIMPLE);
+        assertNotNull(article.accept(simple, filePath));
+    }
 }
