@@ -2,8 +2,11 @@ package project3;
 
 import org.apiguardian.api.API;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 class unitTest {
     /**
@@ -149,33 +152,38 @@ class unitTest {
         assertNull(s.getUrl());
     }
 
+    /**
+     * Verifies that a Simple Format and a File Source will call the "visit" method in Simple Parser one time
+     */
     @Test
     void testVisitSimple() {
-        Simple_Parser simple = new Simple_Parser();
+        Simple_Parser mockSimple = Mockito.mock(Simple_Parser.class);
         String filePath = "inputs/simple.json";
         SourceFormat article = new SourceFormat(ArticleSource.FILE, ArticleFormat.SIMPLE);
-        article.accept(simple, filePath);
-        assertEquals(article.source, ArticleSource.FILE);
-        assertEquals(article.format, ArticleFormat.SIMPLE);
+        article.accept(mockSimple, filePath);
+        verify(mockSimple, times(1)).visit(filePath);
     }
 
+    /**
+     * Verifies that a NewsApi Format and a File Source will call the "visit" method in NewsAPI Parser one time
+     */
     @Test
     void testVisitNewsApiFile() {
-        NewsApi_Parser newsApi = new NewsApi_Parser();
+        NewsApi_Parser mockNewsApi = Mockito.mock(NewsApi_Parser.class);
         String filePath = "inputs/newsapi.json";
         SourceFormat article = new SourceFormat(ArticleSource.FILE, ArticleFormat.NEWSAPI);
-        article.accept(newsApi, filePath);
-        assertEquals(article.source, ArticleSource.FILE);
-        assertEquals(article.format, ArticleFormat.NEWSAPI);
-
+        article.accept(mockNewsApi, filePath);
+        verify(mockNewsApi, times(1)).visit(filePath);
     }
 
+    /**
+     * Verifies that a NewsApi Format and a URL Source will call the "visit" method in NewsAPI Parser one time
+     */
     @Test
     void testVisitNewsApiAPI() {
-        NewsApi_Parser newsApi = new NewsApi_Parser();
+        NewsApi_Parser mockNewsApi = Mockito.mock(NewsApi_Parser.class);
         SourceFormat article = new SourceFormat(ArticleSource.URL, ArticleFormat.NEWSAPI);
-        article.accept(newsApi, Driver.API_Json());
-        assertEquals(article.source, ArticleSource.URL);
-        assertEquals(article.format, ArticleFormat.NEWSAPI);
+        article.accept(mockNewsApi, Driver.API_Json());
+        verify(mockNewsApi, times(1)).visit(Driver.API_Json());
     }
 }

@@ -13,9 +13,8 @@ class Driver {
         Simple_Parser simple = new Simple_Parser();
         NewsApi_Parser newsApi = new NewsApi_Parser();
 
+        // Default SourceFormat
         SourceFormat article = new SourceFormat(ArticleSource.URL, ArticleFormat.NEWSAPI);
-//        SourceFormat article = new SourceFormat(ArticleSource.FILE, ArticleFormat.NEWSAPI);
-//        SourceFormat article = new SourceFormat(ArticleSource.FILE, ArticleFormat.SIMPLE);
 
         switch (article.format) {
             case SIMPLE -> article.accept(simple, filePath);

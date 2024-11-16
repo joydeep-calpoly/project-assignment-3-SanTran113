@@ -7,10 +7,11 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 abstract class Parser{
-
+    /**
+     * Calls the file parser method of a concrete parser class. Parses the given json string.
+     * @param json Takes in a string in json format
+     */
     abstract void visit(String json);
-
-//    abstract void fileParser(String json);
 
     /**
      * Creates a Logger object that will log any invaild articles.

@@ -7,7 +7,10 @@ import java.io.IOException;
 import java.util.logging.Logger;
 
 public class Simple_Parser extends Parser{
-
+    /**
+     * Calls the file parser method. Parses the given json string.
+     * @param json Takes in a string in json format
+     */
     @Override
     void visit(String json) {
         fileParser(json);
